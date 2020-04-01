@@ -66,9 +66,13 @@ class ExpenseReportController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(int $id)
     {
-        //
+        $report = ExpenseReport::FindOrFail($id);
+
+        return view('expenseReport/edit', [
+            'report' => $report
+        ]);
     }
 
     /**
@@ -80,7 +84,11 @@ class ExpenseReportController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $report = ExpenseReport::FindOrFail($id);
+        $report->title = $request->get('title');
+        $report->save();
+
+        return redirect('expense_report');
     }
 
     /**
