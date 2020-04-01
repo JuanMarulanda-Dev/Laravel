@@ -21,6 +21,7 @@
                     <td>{{$expensereport->created_at}}</td>
                     <td>{{$expensereport->updated_at}}</td>
                     <td><a href="/expense_report/{{$expensereport->id}}/edit">Edit</a></td>
+                    <td><a href="/expense_report/{{$expensereport->id}}/confirmDelete">Delete</a></td>
                 </tr>
             @endforeach
         </table>
