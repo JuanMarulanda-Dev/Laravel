@@ -16,8 +16,7 @@
         <table class="table">
             @foreach($expenseReports as $expensereport)
                 <tr>
-                    <td>{{$expensereport->id}}</td>
-                    <td>{{$expensereport->title}}</td>
+                    <td><a href="/expense_report/{{$expensereport->id}}">{{$expensereport->title}}</a></td>
                     <td>{{$expensereport->created_at}}</td>
                     <td>{{$expensereport->updated_at}}</td>
                     <td><a href="/expense_report/{{$expensereport->id}}/edit">Edit</a></td>

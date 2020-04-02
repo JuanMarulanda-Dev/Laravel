@@ -52,12 +52,15 @@ class ExpenseReportController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  ExpenseReport $expensereport
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(ExpenseReport $expenseReport) // Model building
     {
-        //
+        return view('expenseReport/show', [
+            'report' => $expenseReport
+        ]);
+
     }
 
     /**
