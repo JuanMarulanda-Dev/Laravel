@@ -8,6 +8,6 @@ class Expense extends Model
 {
     public function ExpenseReport()
     {
-        return $this-belongsTo(ExpenseReport::class);
+        return $this->belongsTo(ExpenseReport::class);// Pertenece a
     }
 }
