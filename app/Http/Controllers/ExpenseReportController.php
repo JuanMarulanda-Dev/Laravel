@@ -114,4 +114,23 @@ class ExpenseReportController extends Controller
             'id' => $id
         ]);
     }
+
+    public function confirmSendEmail($id)
+    {
+        return view('expense/confirmSendEmail', [
+            'id' => $id
+        ]);
+    }
+
+    public function sendEmail(Request $request, $id)
+    {
+        $report = ExpenseReport::FindOrFail($id);
+
+        $validData = $request->validate([
+            'email' => 'required'
+        ]);
+
+
+    }
+
 }
